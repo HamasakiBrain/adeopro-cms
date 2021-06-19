@@ -261,6 +261,44 @@
                 <div class="app-wrapper-footer">
                     <div class="app-footer">
                         <div class="app-footer__inner">
+                            <div class="header-dots d-md-block d-lg-none d-xl-none ">
+                                <div class="mr-2">
+                                    <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                        <span class="icon-wrapper-bg"></span>
+                                        <i class="icon text-danger ion-social-youtube"></i>
+                                    </a>
+                                </div>
+                                <div class="mr-2">
+                                    <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                        <span class="icon-wrapper-bg"></span>
+                                        <i class="icon text-danger ion-social-google"></i>
+                                    </a>
+                                </div>
+                                <div class="mr-2">
+                                    <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                        <span class="icon-wrapper-bg "></span>
+                                        <img src="{{ asset('assets/images/vk.png') }}" alt="" width="20" class="mx-auto">
+                                    </a>
+                                </div>
+                                <div class="mr-2">
+                                    <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                        <span class="icon-wrapper-bg "></span>
+                                        <img src="{{ asset('assets/images/ok.png') }}" alt="" width="23" class="mx-auto">
+                                    </a>
+                                </div>
+                                <div class="mr-2">
+                                    <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                        <span class="icon-wrapper-bg "></span>
+                                        <img src="{{ asset('assets/images/telegram.png') }}" alt="" width="23" class="mx-auto">
+                                    </a>
+                                </div>
+                                <div class="mr-2">
+                                    <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                        <span class="icon-wrapper-bg"></span>
+                                        <i class="icon text-success ion-social-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
                             <div class="app-footer-left">
                                 <div class="footer-dots">
                                     <img src="{{ asset('assets/images/direct.png') }}" alt="" width="75">
@@ -271,6 +309,7 @@
                                 <div class="footer-dots">
                                     <img src="{{ asset('assets/images/1.jpg') }}" alt="" width="100">
                                 </div>
+
                             </div>
 
                         </div>

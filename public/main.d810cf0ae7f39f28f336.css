@@ -42017,7 +42017,18 @@ span.multiselect-native-select select {
     margin-top: calc(100vh - 100%);
 }
 @media screen and (max-width: 576px){
+    .app-footer .app-footer__inner {
+        display: block;
+    }
+    .app-wrapper-footer {
+        margin-top: calc(100% - 119px)
+    }
     .tel {
         font-size: 1rem;
+    }
+}
+@media screen and (max-width: 360px){
+    .tel {
+        font-size: 0.8rem;
     }
 }
