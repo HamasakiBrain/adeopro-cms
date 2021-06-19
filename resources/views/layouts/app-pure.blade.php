@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>1</title>
+    <title>{{ env('APP_NAME') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 
@@ -20,15 +20,7 @@
     <div class="app-header header-shadow">
         <div class="app-header__logo">
             <div class="logo-src"></div>
-            <div class="header__pane ml-auto">
-                <div>
-                    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                    </button>
-                </div>
-            </div>
+
         </div>
         <div class="app-header__mobile-menu">
             <div>
@@ -44,7 +36,7 @@
                 <a href="tel:+7 999 999 99 99" class="tel">+7 999 999 99 99</a>
             </div>
         </div>    <div class="app-header__content">
-            <div class="app-header-left">
+            <div class="app-header-left lp-none">
                 <ul class="header-megamenu nav">
                     <li class="nav-item">
                         <a href="{{ route('about') }}" class="nav-link">
@@ -195,7 +187,7 @@
             <div class="scrollbar-sidebar">
                 <div class="app-sidebar__inner">
                     <ul class="vertical-nav-menu header-megamenu">
-                        <ul class="header-megamenu d-md-block d-lg-none d-xl-none">
+                        <ul class="header-megamenu lp-block">
                             <li class="nav-item">
                                 <a href="{{ route('about') }}" class="nav-link">
                                     О нас
@@ -221,18 +213,12 @@
                                     Дилеры
                                 </a>
                             </li>
-                           @guest()
-                               @else
-                                <button class="btn-pill btn-shadow btn-shine btn btn-focus w-100" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Выйти</button>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            @endguest
+
                         </ul>
+
                         <ul class="mt-3">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('dillers') }}" class="nav-link">
                                     Представители
                                 </a>
                             </li>
@@ -248,20 +234,45 @@
                                     </a>
                                 </li>
                             @else
+
                                 <li class="nav-item">
                                     <a href="{{ route('home') }}" class="nav-link">
                                        Новости
                                     </a>
                                 </li>
+
                             @endguest
                         </ul>
+
                     </ul>
+                   @guest()
+                       @else
+                        <a href="#" class="btn btn-primary d-block mt-5">Мой кабинет</a>
+                        <a href="#" class="btn btn-outline-primary d-block mt-1 dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Каталоги </a>
+                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu">
+                            <a href="#" tabindex="0" class="dropdown-item">Автокаталоги</a>
+                            <a href="#" tabindex="0" class="dropdown-item">Общий каталог</a>
+                            <a href="#" tabindex="0" class="dropdown-item">Каталог TecDoc</a>
+                            <a href="#" tabindex="0" class="dropdown-item">Мой гараж</a>
+                            <a href="#" tabindex="0" class="dropdown-item">Масла и автохимия</a>
+                            <a href="#" tabindex="0" class="dropdown-item">Стекла</a>
+                            <a href="#" tabindex="0" class="dropdown-item">Бренды</a>
+                        </div>
+                        <a href="#" class="btn btn-outline-primary d-block mt-1">Заказы</a>
+                        <a href="#" class="btn btn-outline-primary d-block mt-1">Корзина</a>
+                        <a href="#" class="btn btn-outline-primary d-block mt-1">Баланс</a>
+                        <button class="btn btn-danger w-100 mt-2" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">Выйти</button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endguest
 
                 </div>
                 <div class="app-wrapper-footer">
                     <div class="app-footer">
                         <div class="app-footer__inner">
-                            <div class="header-dots d-md-block d-lg-none d-xl-none ">
+                            <div class="header-dots d-md-flex d-lg-none d-xl-none ">
                                 <div class="mr-2">
                                     <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
                                         <span class="icon-wrapper-bg"></span>

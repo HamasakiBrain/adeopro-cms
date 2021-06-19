@@ -11945,7 +11945,7 @@ a, button, .btn {
 
 .closed-sidebar .app-sidebar {
     transition: all .3s ease;
-    width: 80px;
+    width: 150px;
     min-width: 80px;
     flex: 0 0 80px;
     z-index: 13
@@ -12062,7 +12062,7 @@ a, button, .btn {
 }
 
 .closed-sidebar.fixed-sidebar .app-main__outer {
-    padding-left: 80px
+    padding-left: 150px
 }
 
 .closed-sidebar.fixed-header:not(.fixed-sidebar) .app-sidebar .app-header__logo {
@@ -12213,12 +12213,12 @@ a, button, .btn {
 }
 
 .app-footer {
-    height: 60px
+    height: 100%
 }
 
 .app-footer .app-footer__inner {
     padding: 0 1.5rem 0 .75rem;
-    height: 60px;
+    height: 100%;
     display: flex;
     align-content: center;
     align-items: center
@@ -42013,16 +42013,12 @@ span.multiselect-native-select select {
     text-decoration: none !important;
     font-weight: 700;
 }
-.app-wrapper-footer {
-    margin-top: calc(100vh - 100%);
-}
+
 @media screen and (max-width: 576px){
     .app-footer .app-footer__inner {
         display: block;
     }
-    .app-wrapper-footer {
-        margin-top: calc(100% - 119px)
-    }
+
     .tel {
         font-size: 1rem;
     }
@@ -42030,5 +42026,39 @@ span.multiselect-native-select select {
 @media screen and (max-width: 360px){
     .tel {
         font-size: 0.8rem;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1800px){
+    .tel {
+        font-size: 0.8rem;
+    }
+}
+.lp-none {
+    display: none !important;
+}
+@media screen and (min-width: 1495px) and (max-width: 4096px){
+    .lp-none {
+        display: block !important;
+    }
+    .lp-block {
+        display: none;
+    }
+}
+@media screen and (max-width: 1100px){
+    .app-footer__inner {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1495px){
+    .lp-block {
+        display: block;
+    }
+    .tel {
+        font-size: 100%
+    }
+    .nav-link {
+        padding: 0;
+        font-size: .7rem;
     }
 }
