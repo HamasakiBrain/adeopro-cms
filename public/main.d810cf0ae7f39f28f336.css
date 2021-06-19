@@ -11360,7 +11360,7 @@ a, button, .btn {
 
 .header-btn-lg {
     padding: 0 0 0 1.5rem;
-    margin-left: 1.5rem;
+    /*margin-left: 1.5rem;*/
     display: flex;
     align-items: center;
     position: relative
@@ -11374,7 +11374,7 @@ a, button, .btn {
     width: 1px;
     height: 30px;
     margin-top: -15px;
-    content: ''
+    /*content: ''*/
 }
 
 .header-btn-lg .hamburger-inner, .header-btn-lg .hamburger-inner::before, .header-btn-lg .hamburger-inner::after {
@@ -42006,4 +42006,18 @@ span.multiselect-native-select select {
 
 .after-img {
     max-width: 100%
+}
+.tel {
+    font-size: 1.6rem;
+    color: #3f6ad8;
+    text-decoration: none !important;
+    font-weight: 700;
+}
+.app-wrapper-footer {
+    margin-top: calc(100vh - 100%);
+}
+@media screen and (max-width: 576px){
+    .tel {
+        font-size: 1rem;
+    }
 }

@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', [\App\Http\Controllers\BladeController::class, 'about'])->name('about');
+Route::get('/contacts', [\App\Http\Controllers\BladeController::class, 'contacts'])->name('contacts');
+Route::get('/delivery', [\App\Http\Controllers\BladeController::class, 'delivery'])->name('delivery');
+Route::get('/payment', [\App\Http\Controllers\BladeController::class, 'payment'])->name('payment');
+Route::get('/dillers', [\App\Http\Controllers\BladeController::class, 'dillers'])->name('dillers');

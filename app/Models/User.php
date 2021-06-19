@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'country', 'city', 'zip', 'address',
+        'site', 'type', 'org', 'org_type', 'phone', 'icq', 'skype', 'diller', 'seo'
     ];
 
     /**

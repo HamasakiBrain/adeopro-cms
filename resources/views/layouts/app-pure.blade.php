@@ -12,7 +12,7 @@
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
-
+    @yield('head')
     <link href="{{ asset('main.d810cf0ae7f39f28f336.css') }}" rel="stylesheet"></head>
 
 <body>
@@ -41,51 +41,139 @@
         </div>
         <div class="app-header__menu">
             <div class="widget-content-left  ml-3 header-user-info">
-                <div class="widget-heading font-weight-bolder"> +7 999 999 99 99</div>
-                <div class="widget-subheading">ПН-ПТ с 9:00 до 18:00 </div>
+                <a href="tel:+7 999 999 99 99" class="tel">+7 999 999 99 99</a>
             </div>
         </div>    <div class="app-header__content">
             <div class="app-header-left">
                 <ul class="header-megamenu nav">
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">
+                        <a href="{{ route('about') }}" class="nav-link">
                             О нас
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="payment.html" class="nav-link">
+                        <a href="{{ route('payment') }}" class="nav-link">
                             Оплата
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="delivery.html" class="nav-link">
+                        <a href="{{ route('delivery') }}" class="nav-link">
                             Доставка
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="contacts.html" class="nav-link">
+                        <a href="{{ route('contacts') }}" class="nav-link">
                             Контакты
                         </a>
                     </li>
-
                     <li class="nav-item">
-                        <a href="dilers.html" class="nav-link">
+                        <a href="{{ route('dillers') }}" class="nav-link">
                             Дилеры
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-header-right">
+                <div class="header-dots">
+                    <div class="mr-2">
+                        <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                            <span class="icon-wrapper-bg"></span>
+                                <i class="icon text-danger ion-social-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="mr-2">
+                       <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                            <span class="icon-wrapper-bg"></span>
+                            <i class="icon text-danger ion-social-google"></i>
+                        </a>
+                    </div>
+                    <div class="mr-2">
+                       <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                            <span class="icon-wrapper-bg "></span>
+                            <img src="{{ asset('assets/images/vk.png') }}" alt="" width="20" class="mx-auto">
+                        </a>
+                    </div>
+                    <div class="mr-2">
+                       <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                            <span class="icon-wrapper-bg "></span>
+                            <img src="{{ asset('assets/images/ok.png') }}" alt="" width="23" class="mx-auto">
+                        </a>
+                    </div>
+                    <div class="mr-2">
+                       <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                            <span class="icon-wrapper-bg "></span>
+                            <img src="{{ asset('assets/images/telegram.png') }}" alt="" width="23" class="mx-auto">
+                        </a>
+                    </div>
+                    <div class="mr-2">
+                       <a href="#" class="icon-wrapper icon-wrapper-alt rounded-circle">
+                            <span class="icon-wrapper-bg"></span>
+                            <i class="icon text-success ion-social-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <ul class="header-megamenu nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#zvonok">
+                            Закажите &nbsp; <span class="border-bottom text-info border-info">обратный звонок</span>
                         </a>
                     </li>
 
                 </ul>
-            </div>
-            <div class="app-header-right">
                 <div class="header-btn-lg pr-0">
-                    <div class="widget-content p-0">
+                    <div class="widget-content p-0 mr-3">
                         <div class="widget-content-wrapper">
-                            <div class="widget-content-left  ml-3 header-user-info">
-                                <div class="widget-heading"> +7 999 999 99 99</div>
-                                <div class="widget-subheading">ПН-ПТ с 9:00 до 18:00 </div>
+                            <div class="widget-content-left  header-user-info">
+                              <a href="tel:+7 999 999 99 99" class="tel">+7 999 999 99 99</a>
                             </div>
                         </div>
                     </div>
+                    @guest()
+                    @else
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                            <img class="rounded-circle" src="assets/images/avatars/1.jpg" alt="" width="42">
+                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right" style="">
+                                            <div class="dropdown-menu-header">
+                                                <div class="dropdown-menu-header-inner bg-info">
+                                                    <div class="menu-header-image opacity-2" style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
+                                                    <div class="menu-header-content text-left">
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <img class="rounded-circle" src="assets/images/avatars/1.jpg" alt="" width="42">
+                                                                </div>
+                                                                <div class="widget-content-left">
+                                                                    <div class="widget-heading">{{ auth()->user()->name }}</div>
+                                                                    <div class="widget-subheading opacity-8">{{ auth()->user()->org }}</div>
+                                                                </div>
+                                                                <div class="widget-content-right mr-2">
+                                                                    <button class="btn-pill btn-shadow btn-shine btn btn-focus" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Выйти</button>
+                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                        @csrf
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content-left  ml-3 header-user-info">
+                                    <div class="widget-heading"> {{ auth()->user()->name }} </div>
+                                    <div class="widget-subheading"> {{ auth()->user()->org }} </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endguest
                 </div>
             </div>
         </div>
@@ -104,51 +192,125 @@
                     </div>
                 </div>
             </div>
-            <div class="app-header__mobile-menu">
-                <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                    </button>
-                </div>
-            </div>
-            <div class="app-header__menu">
-                <div class="widget-content-left  ml-3 header-user-info">
-                    <div class="widget-heading"> +7 999 999 99 99</div>
-                    <div class="widget-subheading">ПН-ПТ с 9:00 до 18:00 </div>
-                </div>
-            </div>
             <div class="scrollbar-sidebar">
                 <div class="app-sidebar__inner">
-                    <ul class="vertical-nav-menu">
-                        <li class="">
-                            <a href="#">
-                                <i class="metismenu-icon pe-7s-users"></i> Региональные представители
-                            </a>
-                        </li>
-                        <li>
-                            <a href="register.html">
-                                <i class="metismenu-icon pe-7s-user"></i> Регистрация
-                            </a>
-                        </li>
-                        <li>
-                            <a href="login.html">
-                                <i class="metismenu-icon pe-7s-user"></i> Вход
-                            </a>
-                        </li>
+                    <ul class="vertical-nav-menu header-megamenu">
+                        <ul class="header-megamenu d-md-block d-lg-none d-xl-none">
+                            <li class="nav-item">
+                                <a href="{{ route('about') }}" class="nav-link">
+                                    О нас
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('payment') }}" class="nav-link">
+                                    Оплата
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('delivery') }}" class="nav-link">
+                                    Доставка
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('contacts') }}" class="nav-link">
+                                    Контакты
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Дилеры
+                                </a>
+                            </li>
+                           @guest()
+                               @else
+                                <button class="btn-pill btn-shadow btn-shine btn btn-focus w-100" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Выйти</button>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            @endguest
+                        </ul>
+                        <ul class="mt-3">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Представители
+                                </a>
+                            </li>
+                            @guest()
+                                <li class="nav-item">
+                                    <a href="{{ route('register') }}" class="nav-link">
+                                        Регистрация
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('login') }}" class="nav-link">
+                                        Вход
+                                    </a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a href="{{ route('home') }}" class="nav-link">
+                                       Новости
+                                    </a>
+                                </li>
+                            @endguest
+                        </ul>
                     </ul>
+
+                </div>
+                <div class="app-wrapper-footer">
+                    <div class="app-footer">
+                        <div class="app-footer__inner">
+                            <div class="app-footer-left">
+                                <div class="footer-dots">
+                                    <img src="{{ asset('assets/images/direct.png') }}" alt="" width="75">
+                                </div>
+                                <div class="footer-dots mx-3">
+                                    <img src="{{ asset('assets/images/google.svg') }}" alt="" width="40">
+                                </div>
+                                <div class="footer-dots">
+                                    <img src="{{ asset('assets/images/1.jpg') }}" alt="" width="100">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div><div class="app-main__outer">
             <div class="app-main__inner">
                 @yield('content')
             </div>
-
+        </div>
+    </div>
+    <div class="modal fade" id="zvonok" tabindex="-1"  aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Заказ звонка</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input id="name" type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Номер телефона</label>
+                            <input id="phone" type="text" name="phone" class="form-control input-mask-trigger" data-inputmask="'mask': '+9(999) 999-9999'" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary ml-auto d-block" >Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
     <script type="text/javascript" src="{{ asset('assets/scripts/main.d810cf0ae7f39f28f336.js') }}"></script>
+    @yield('scripts')
 </div>
 </body>
 
