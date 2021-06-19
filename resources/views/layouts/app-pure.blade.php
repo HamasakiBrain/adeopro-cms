@@ -13,7 +13,9 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
     @yield('head')
-    <link href="{{ asset('main.d810cf0ae7f39f28f336.css') }}" rel="stylesheet"></head>
+    <link href="{{ asset('main.d810cf0ae7f39f28f336.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+</head>
 
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
@@ -260,7 +262,7 @@
                         </div>
                         <a href="#" class="btn btn-outline-primary d-block mt-1">Заказы</a>
                         <a href="#" class="btn btn-outline-primary d-block mt-1">Корзина</a>
-                        <a href="#" class="btn btn-outline-primary d-block mt-1">Баланс</a>
+                        <a href="#" class="btn btn-outline-primary d-block mt-1">Баланс (1200.00 ₽)</a>
                         <button class="btn btn-danger w-100 mt-2" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">Выйти</button>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -360,6 +362,7 @@
     </div>
 
     <script type="text/javascript" src="{{ asset('assets/scripts/main.d810cf0ae7f39f28f336.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     @yield('scripts')
 </div>
 </body>
