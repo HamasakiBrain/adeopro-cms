@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->tinyInteger('isAdmin')->default(0);
+            $table->unsignedBigInteger('balance')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('country');
@@ -30,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('icq')->nullable();
             $table->string('skype')->nullable();
-            $table->string('diller')->default(0);
+            $table->string('diller')->nullable();
             $table->string('seo')->nullable();
             $table->rememberToken();
             $table->timestamps();

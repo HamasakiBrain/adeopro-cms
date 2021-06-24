@@ -25,3 +25,22 @@ Route::get('/contacts', [\App\Http\Controllers\BladeController::class, 'contacts
 Route::get('/delivery', [\App\Http\Controllers\BladeController::class, 'delivery'])->name('delivery');
 Route::get('/payment', [\App\Http\Controllers\BladeController::class, 'payment'])->name('payment');
 Route::get('/dillers', [\App\Http\Controllers\BladeController::class, 'dillers'])->name('dillers');
+
+
+Route::prefix('/jetbrain')->middleware(['isAdmin'])->group(function (){
+    Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.main');
+    Route::get('/users/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.users');
+    Route::any('/users/destroy/{id}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin.users.destroy');
+
+    Route::get('/country', [\App\Http\Controllers\CountryController::class, 'index'])->name('admin.country');
+    Route::any('/country/add', [\App\Http\Controllers\CountryController::class, 'store'])->name('admin.country.add');
+    Route::any('/country/destroy/{id}', [\App\Http\Controllers\CountryController::class, 'destroy'])->name('admin.country.destroy');
+
+    Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('admin.posts');
+    Route::any('/posts/add', [\App\Http\Controllers\PostController::class, 'store'])->name('admin.posts.add');
+    Route::any('/posts/destroy/{id}', [\App\Http\Controllers\PostController::class, 'destroy'])->name('admin.posts.destroy');
+
+    Route::get('/dillers', [\App\Http\Controllers\DillerController::class, 'index'])->name('admin.dillers');
+    Route::any('/dillers/add', [\App\Http\Controllers\DillerController::class, 'store'])->name('admin.dillers.add');
+    Route::any('/dillers/destroy/{id}', [\App\Http\Controllers\DillerController::class, 'destroy'])->name('admin.dillers.destroy');
+});

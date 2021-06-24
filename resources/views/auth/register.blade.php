@@ -79,10 +79,9 @@
                         <div class="position-relative form-group">
                             <label for="country"><small>Страна</small><span class="text-danger">*</span></label>
                             <select name="country" id="country" class="custom-select @error('country') is-invalid @enderror" required>
-                                <option value="0">Выбрать</option>
-                                <option value="1">Абхазия</option>
-                                <option value="2">Азербайджан</option>
-                                <option value="4">Таджикистан</option>
+                              @foreach(\App\Models\Country::all() as $country)
+                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                              @endforeach
                             </select>
                             @error('country')
                             <span class="invalid-feedback" role="alert">
@@ -96,7 +95,7 @@
                             <label for="city"><small>Город</small><span class="text-danger">*</span></label>
                             <input type="text" name="city" id="city" class="form-control @error('city') is-invalid @enderror" required value="{{ old('city') }}">
                             @error('city')
-                            <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror

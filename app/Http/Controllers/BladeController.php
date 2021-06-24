@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diller;
 use Illuminate\Http\Request;
 
 class BladeController extends Controller
@@ -19,6 +20,7 @@ class BladeController extends Controller
         return view('pages.delivery');
     }
     public function dillers(){
-        return view('pages.dillers');
+        $dillers = Diller::all();
+        return view('pages.dillers')->with(['dillers' => $dillers]);
     }
 }

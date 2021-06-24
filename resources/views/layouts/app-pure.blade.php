@@ -65,6 +65,13 @@
                             Дилеры
                         </a>
                     </li>
+                    @if(Auth::check())
+                        @if(auth()->user()->isAdmin)
+                            <li class="nav-item">
+                                <a href="{{ route('admin.main') }}" class="nav-link btn btn-danger text-white">Админ вход</a>
+                            </li>
+                        @endif
+                    @endif
                 </ul>
             </div>
             <div class="app-header-right">
@@ -216,6 +223,14 @@
                                 </a>
                             </li>
 
+                           @if(Auth::check())
+                                @if(auth()->user()->isAdmin)
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.main') }}" class="nav-link btn btn-danger text-white">Админ вход</a>
+                                    </li>
+                                @endif
+                           @endif
+
                         </ul>
 
                         <ul class="mt-3">
@@ -262,7 +277,7 @@
                         </div>
                         <a href="#" class="btn btn-outline-primary d-block mt-1">Заказы</a>
                         <a href="#" class="btn btn-outline-primary d-block mt-1">Корзина</a>
-                        <a href="#" class="btn btn-outline-primary d-block mt-1">Баланс (1200.00 ₽)</a>
+                        <a href="#" class="btn btn-outline-primary d-block mt-1">Баланс ({{ auth()->user()->balance }}.00 ₽)</a>
                         <button class="btn btn-danger w-100 mt-2" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">Выйти</button>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
