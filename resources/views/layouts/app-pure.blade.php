@@ -136,7 +136,7 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img class="rounded-circle" src="assets/images/avatars/1.jpg" alt="" width="42">
+                                            <img class="rounded-circle" src="user.svg" alt="" width="42">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right" style="">
@@ -147,11 +147,11 @@
                                                         <div class="widget-content p-0">
                                                             <div class="widget-content-wrapper">
                                                                 <div class="widget-content-left mr-3">
-                                                                    <img class="rounded-circle" src="assets/images/avatars/1.jpg" alt="" width="42">
+                                                                    <img class="rounded-circle" src="user.svg" alt="" width="42">
                                                                 </div>
                                                                 <div class="widget-content-left">
                                                                     <div class="widget-heading">{{ auth()->user()->name }}</div>
-                                                                    <div class="widget-subheading opacity-8">{{ auth()->user()->org }}</div>
+                                                                    <div class="widget-subheading opacity-8">{{ auth()->user()->phone }}</div>
                                                                 </div>
                                                                 <div class="widget-content-right mr-2">
                                                                     <button class="btn-pill btn-shadow btn-shine btn btn-focus" onclick="event.preventDefault();
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading"> {{ auth()->user()->name }} </div>
-                                    <div class="widget-subheading"> {{ auth()->user()->org }} </div>
+                                    <div class="widget-subheading"> {{ auth()->user()->phone }} </div>
                                 </div>
                             </div>
                         </div>
@@ -235,6 +235,11 @@
 
                         <ul class="mt-3">
                             <li class="nav-item">
+                                <a href="/" class="nav-link">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('dillers') }}" class="nav-link">
                                     Представители
                                 </a>
@@ -264,10 +269,10 @@
                     </ul>
                    @guest()
                        @else
-                        <a href="#" class="btn btn-primary d-block mt-5">Мой кабинет</a>
+                        <a href="{{ route('cabinet') }}" class="btn btn-primary d-block mt-5">Мой кабинет</a>
                         <a href="#" class="btn btn-outline-primary d-block mt-1 dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Каталоги </a>
                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu">
-                            <a href="#" tabindex="0" class="dropdown-item">Автокаталоги</a>
+                            <a href="{{ route('auto') }}" tabindex="0" class="dropdown-item">Автокаталоги</a>
                             <a href="#" tabindex="0" class="dropdown-item">Общий каталог</a>
                             <a href="#" tabindex="0" class="dropdown-item">Каталог TecDoc</a>
                             <a href="#" tabindex="0" class="dropdown-item">Мой гараж</a>

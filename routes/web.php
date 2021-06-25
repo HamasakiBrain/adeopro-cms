@@ -26,6 +26,8 @@ Route::get('/delivery', [\App\Http\Controllers\BladeController::class, 'delivery
 Route::get('/payment', [\App\Http\Controllers\BladeController::class, 'payment'])->name('payment');
 Route::get('/dillers', [\App\Http\Controllers\BladeController::class, 'dillers'])->name('dillers');
 
+Route::get('/catalog/auto', [\App\Http\Controllers\BladeController::class, 'auto'])->name('auto');
+
 
 Route::prefix('/jetbrain')->middleware(['isAdmin'])->group(function (){
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.main');
@@ -44,3 +46,8 @@ Route::prefix('/jetbrain')->middleware(['isAdmin'])->group(function (){
     Route::any('/dillers/add', [\App\Http\Controllers\DillerController::class, 'store'])->name('admin.dillers.add');
     Route::any('/dillers/destroy/{id}', [\App\Http\Controllers\DillerController::class, 'destroy'])->name('admin.dillers.destroy');
 });
+
+
+Route::get('/cabinet/', [\App\Http\Controllers\BladeController::class, 'cabinet'])->name('cabinet');
+Route::any('/cabinet/update', [\App\Http\Controllers\BladeController::class, 'userUpdate'])->name('user.update');
+Route::any('/password/update', [\App\Http\Controllers\BladeController::class, 'passwordUpdate'])->name('password.update');
