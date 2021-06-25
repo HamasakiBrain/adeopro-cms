@@ -27,7 +27,7 @@ Route::get('/payment', [\App\Http\Controllers\BladeController::class, 'payment']
 Route::get('/dillers', [\App\Http\Controllers\BladeController::class, 'dillers'])->name('dillers');
 
 Route::get('/catalog/auto', [\App\Http\Controllers\BladeController::class, 'auto'])->name('auto');
-
+Route::get('/catalog/all', [\App\Http\Controllers\BladeController::class, 'all'])->name('catalog.all');
 
 Route::prefix('/jetbrain')->middleware(['isAdmin'])->group(function (){
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.main');

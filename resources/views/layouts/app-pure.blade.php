@@ -273,7 +273,7 @@
                         <a href="#" class="btn btn-outline-primary d-block mt-1 dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Каталоги </a>
                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu">
                             <a href="{{ route('auto') }}" tabindex="0" class="dropdown-item">Автокаталоги</a>
-                            <a href="#" tabindex="0" class="dropdown-item">Общий каталог</a>
+                            <a href="{{ route('catalog.all') }}" tabindex="0" class="dropdown-item">Общий каталог</a>
                             <a href="#" tabindex="0" class="dropdown-item">Каталог TecDoc</a>
                             <a href="#" tabindex="0" class="dropdown-item">Мой гараж</a>
                             <a href="#" tabindex="0" class="dropdown-item">Масла и автохимия</a>

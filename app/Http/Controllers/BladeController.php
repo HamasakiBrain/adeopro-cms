@@ -57,4 +57,7 @@ class BladeController extends Controller
             return redirect()->back()->with(['message' => 'Неправильный старый пароль']);
         }
     }
+    public function all(){
+        return view('pages.catalog.all');
+    }
 }
