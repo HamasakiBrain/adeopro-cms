@@ -109,7 +109,7 @@
                     <aside class="col-md-3">
                         <a href="#" class="img-wrap">
                             <span class="badge badge-danger"> NEW </span>
-                            <img src="https://sun9-25.userapi.com/impg/lt5n2mksg9B8KQSXe3JZNivjNt0zQQrHG_LRZg/zp84NaDXRng.jpg?size=1620x2160&quality=96&sign=0a30f724da2846da9d03fbae5dcac60e&type=album">
+                            <img src="https://via.placeholder.com/300">
                         </a>
                     </aside> <!-- col.// -->
                     <div class="col-md-6">

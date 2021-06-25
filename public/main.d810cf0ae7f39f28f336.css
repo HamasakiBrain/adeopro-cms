@@ -11241,9 +11241,9 @@ a, button, .btn {
 }
 
 .app-header__logo .logo-src {
-    height: 23px;
-    width: 97px;
-    background: url(assets/images/logo-inverse.png)
+    height: 30px;
+    width: 100%;
+    background: url(assets/images/logo-inverse.png) no-repeat
 }
 
 .app-header__menu, .app-header__mobile-menu {
