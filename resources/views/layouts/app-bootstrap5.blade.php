@@ -24,9 +24,11 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  @if(auth()->user()->isAdmin)
-                        <a class="navbar-brand" href="{{ route('admin.main') }}">Админ панель</a>
-                  @endif
+                 @if(Auth::check())
+                        @if(auth()->user()->isAdmin)
+                            <a class="navbar-brand" href="{{ route('admin.main') }}">Админ панель</a>
+                        @endif
+                 @endif
                 </ul>
                 <div class="my-auto my-lg-0 d-flex">
                   @guest()

@@ -169,7 +169,7 @@
                            </div>
 
                        </form>
-                       <form action="{{ route('password.update') }}" class="form-row card" method="POST">
+                       <form action="{{ route('passw.update') }}" class="form-row card" method="POST">
                            @csrf
                            <div class="card-header">Пароль</div>
                            <div class="card-body row">

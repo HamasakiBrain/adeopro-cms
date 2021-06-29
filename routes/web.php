@@ -54,4 +54,4 @@ Route::prefix('/jetbrain')->middleware(['isAdmin'])->group(function (){
 
 Route::get('/cabinet/', [\App\Http\Controllers\BladeController::class, 'cabinet'])->name('cabinet');
 Route::any('/cabinet/update', [\App\Http\Controllers\BladeController::class, 'userUpdate'])->name('user.update');
-Route::any('/password/update', [\App\Http\Controllers\BladeController::class, 'passwordUpdate'])->name('password.update');
+Route::any('/passw/update', [\App\Http\Controllers\BladeController::class, 'passwordUpdate'])->name('passw.update');
