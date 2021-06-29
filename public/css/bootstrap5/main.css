@@ -1,0 +1,93 @@
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.bg-blue {
+    background-color: #0e3365;
+    color: #fff;
+}
+.navbar-brand {
+    color: #fff !important;
+    padding: 10px !important;
+    transition: .3s all;
+}
+.navbar-brand:hover {
+    background-color: #d80c24 !important;
+}
+body {
+    font-size: 1.2rem !important;
+}
+.slide {
+    position: relative;
+}
+.slide img {
+    filter: brightness(.6);
+}
+.slide h2 {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 40%;
+    color: #fff;
+    font-weight: 700;
+}
+.search {
+    height: 60px !important;
+    width: 87% !important;
+}
+.badge {
+    border-radius: 0 !important;
+}
+.badge-danger{
+    background-color: #d80c24!important;
+}
+.post-title {
+    font-size: 15px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 900px){
+    .search {
+        height: 100% !important;
+        width: 100% !important;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1450px) {
+    .search {
+        width: 70% !important;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .search {
+        height: 100% !important;
+    }
+}
+
+table thead tr th {
+    font-size: 12px
+}
+table tbody tr td {
+    font-size: 70%;
+}

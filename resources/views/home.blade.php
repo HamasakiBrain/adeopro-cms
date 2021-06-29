@@ -1,331 +1,44 @@
-@extends('layouts.app-pure')
+@extends('layouts.app-bootstrap5')
 
 @section('content')
-    <div class="">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">{{ __('Новости') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <table style="width: 100%;" id="testTable"
-                               class="table table-hover table-striped table-bordered">
-                            <thead>
-                            <tr>
-                                <th>Дата</th>
-                                <th>ID заказа</th>
-                                <th>Артикул</th>
-                                <th>Наименование</th>
-                                <th>Производитель</th>
-                                <th>Примечание</th>
-                                <th>Склад</th>
-                                <th>Цена</th>
-                                <th>Продажа</th>
-                                <th>Сумма</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr> <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr> <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-                                <tr>
-                                    <td>19 июня 14:00</td>
-                                    <td>3110000</td>
-                                    <td>STYYY10010</td>
-                                    <td>Тестовое название товара</td>
-                                    <td>Test</td>
-                                    <td>test</td>
-                                    <td>Москва склад</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                    <td>1500 ₽</td>
-                                </tr>
-
-
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Дата</th>
-                                <th>ID заказа</th>
-                                <th>Артикул</th>
-                                <th>Наименование</th>
-                                <th>Производитель</th>
-                                <th>Примечание</th>
-                                <th>Склад</th>
-                                <th>Цена</th>
-                                <th>Продажа</th>
-                                <th>Сумма</th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="slider">
+        <div class="slide">
+            <h2>НИЗКИЕ ЦЕНЫ, БОЛЬШОЙ ВЫБОР, БЫСТРАЯ ДОСТАВКА</h2>
+            <img src="{{ asset('images/slide_1.jpg') }}" alt="">
+        </div>
+        <div class="slide">
+            <h2>НИЗКИЕ ЦЕНЫ, БОЛЬШОЙ ВЫБОР, БЫСТРАЯ ДОСТАВКА</h2>
+            <img src="{{ asset('images/slide_1.jpg') }}" alt="">
         </div>
     </div>
+
+    <div class="container">
+        <h2 class="text-center my-4 font-weight-bold">Наши партнеры</h2>
+        <div class="partner_slider">
+            <img src="///f.nodacdn.net/367057" alt="">
+            <img src="///f.nodacdn.net/367054" alt="">
+            <img src="///f.nodacdn.net/367055" alt="">
+            <img src="///f.nodacdn.net/367056" alt="">
+            <img src="///f.nodacdn.net/367058" alt="">
+            <img src="///f.nodacdn.net/367059" alt="">
+        </div>
+        <h4 class="font-weight-bold mt-5">Новости</h4>
+        <div class="row">
+            @foreach($posts as $post)
+                <div class="col-md-12 d-flex mb-3 border-bottom pb-4">
+                    <img src="https://f.nodacdn.net/424675" alt="" width="150">
+                    <div class="ml-3 ">
+                        <div class="d-md-flex align-items-start">
+                            <div class="badge badge-danger mr-2">{{ $post->created_at->diffForHumans() }}</div>
+                            <div class="border-bottom post-title">{{ $post->title }}</div>
+                        </div>
+                        {{ $post->description }}
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+
 @endsection
 
